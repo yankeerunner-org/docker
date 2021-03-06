@@ -32,8 +32,7 @@ USER ${username}
 
 # yocto setting
 COPY setup.sh /home/dev
-COPY build.sh /home/dev
-RUN /home/dev/setup.sh
+RUN /home/dev/setup.sh && rm /home/dev/setup.sh
 
 # develop setting
 RUN sudo apt-get install -y vim

@@ -1,1 +1,1 @@
-docker run -it -v "$(pwd):/home/dev/deploy" -e TZ=Asia/Tokyo yocto:latest /bin/bash /home/dev/setup.sh
+docker run -it -v "$(pwd):/home/dev/host" -e TZ=Asia/Tokyo yocto:latest /bin/bash
