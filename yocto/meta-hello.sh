@@ -26,6 +26,13 @@ IMX_DEFAULT_DISTRO_FEATURES_append = " systemd"
 # for c++
 TOOLCHAIN_TARGET_TASK_append = " libstdc++-staticdev"
 EOF
+
+# OS image build
 cd /home/dev/poky/rpi-build
 bitbake core-image-base
 cp /home/dev/poky/rpi-build/tmp/deploy/images/raspberrypi4-64/core-image-base-raspberrypi4-64.wic.bz2 /home/dev/host/deploy/core-image-base-raspberrypi4-64-hello.wic.bz2 
+
+# Tool chain build
+cd /home/dev/poky/rpi-build
+bitbake core-image-base -c populate_sdk
+cp -R /home/dev/poky/rpi-build/tmp/deploy/sdk /home/dev/host/deploy/sdk
