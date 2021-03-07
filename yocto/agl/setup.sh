@@ -12,13 +12,6 @@ chmod a+x $HOME/bin/repo
 
 # download the agl source files
 # stable release
-#cd $AGL_TOP
-#mkdir jellyfish
-#cd jellyfish
-#repo init -b jellyfish -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
-#repo sync
-
-# stable release
 cd $AGL_TOP
 mkdir koi
 cd koi
