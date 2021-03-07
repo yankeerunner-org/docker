@@ -11,11 +11,18 @@ curl https://storage.googleapis.com/git-repo-downloads/repo > $HOME/bin/repo
 chmod a+x $HOME/bin/repo
 
 # download the agl source files
-# staple release
+# stable release
+#cd $AGL_TOP
+#mkdir jellyfish
+#cd jellyfish
+#repo init -b jellyfish -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
+#repo sync
+
+# stable release
 cd $AGL_TOP
-mkdir jellyfish
-cd jellyfish
-repo init -b jellyfish -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
+mkdir koi
+cd koi
+repo init -b koi -m koi_11.0.0.xml -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
 repo sync
 
 # cutting edge...
