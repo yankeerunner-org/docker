@@ -1,4 +1,5 @@
 # setup build environment
+cd $AGL_TOP/jellyfish
 source meta-agl/scripts/aglsetup.sh -f -m raspberrypi4 -b raspberrypi4 agl-demo agl-devel
 echo '# reuse download directories' >> $AGL_TOP/site.conf
 echo 'DL_DIR = "$HOME/downloads/"' >> $AGL_TOP/site.conf
