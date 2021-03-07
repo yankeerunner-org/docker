@@ -1,7 +1,7 @@
 # setup build environment
 cd $AGL_TOP/koi
 
-# build setup (from Quiita)
+# build setup
 source meta-agl/scripts/aglsetup.sh -f -m raspberrypi4 -b raspberrypi4 agl-demo agl-appfw-smack
 echo '# reuse download directories' > $AGL_TOP/site.conf
 echo 'DL_DIR = "$HOME/downloads/"' >> $AGL_TOP/site.conf
