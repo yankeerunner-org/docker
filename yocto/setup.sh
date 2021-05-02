@@ -1,9 +1,9 @@
 git clone git://git.yoctoproject.org/poky
 cd /home/dev/poky
-git checkout origin/gatesgarth -b gatesgarth
+git checkout origin/hardknott -b hardknott
 git clone git://git.yoctoproject.org/meta-raspberrypi
 cd /home/dev/poky/meta-raspberrypi/
-git checkout origin/gatesgarth -b gatesgarth
+git checkout origin/hardknott -b hardknott
 cd /home/dev/poky
 git clone git://git.openembedded.org/meta-openembedded
 source oe-init-build-env rpi-build
