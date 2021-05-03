@@ -15,7 +15,7 @@ chmod a+x $HOME/bin/repo
 cd $AGL_TOP
 mkdir koi
 cd koi
-repo init -b koi -m koi_11.0.0.xml -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
+repo init -b koi -m koi_11.0.1.xml -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
 repo sync
 
 # cutting edge...

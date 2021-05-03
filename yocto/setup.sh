@@ -1,11 +1,7 @@
-git clone git://git.yoctoproject.org/poky
+git clone git://git.yoctoproject.org/poky -b dunfell
 cd /home/dev/poky
-git checkout origin/hardknott -b hardknott
-git clone git://git.yoctoproject.org/meta-raspberrypi
-cd /home/dev/poky/meta-raspberrypi/
-git checkout origin/hardknott -b hardknott
-cd /home/dev/poky
-git clone git://git.openembedded.org/meta-openembedded
+git clone git://git.yoctoproject.org/meta-raspberrypi -b dunfell
+git clone git://git.openembedded.org/meta-openembedded -b dunfell
 source oe-init-build-env rpi-build
 bitbake-layers add-layer ../meta-raspberrypi/
 bitbake-layers add-layer ../meta-openembedded/meta-oe
