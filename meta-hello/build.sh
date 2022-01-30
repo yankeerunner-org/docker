@@ -5,8 +5,8 @@ bitbake-layers create-layer meta-hello
 cd /home/dev/poky/rpi-build
 bitbake-layers add-layer ../meta-hello/
 mkdir -p /home/dev/poky/meta-hello/recipes-hello/hello/files/
-cp /home/dev/host/meta-hello/hello.c /home/dev/poky/meta-hello/recipes-hello/hello/files/
-cp /home/dev/host/meta-hello/hello_1.0.bb /home/dev/poky/meta-hello/recipes-hello/hello/
+cp /home/dev/host/hello.c /home/dev/poky/meta-hello/recipes-hello/hello/files/
+cp /home/dev/host/hello_1.0.bb /home/dev/poky/meta-hello/recipes-hello/hello/
 
 # create yocto config
 cat >> /home/dev/poky/rpi-build/conf/local.conf << "EOF"
@@ -36,7 +36,7 @@ EOF
 # OS image build
 cd /home/dev/poky/rpi-build
 bitbake core-image-base
-cp /home/dev/poky/rpi-build/tmp/deploy/images/raspberrypi4-64/core-image-base-raspberrypi4-64.wic.bz2 /home/dev/host/deploy/core-image-base-raspberrypi4-64-hello.wic.bz2 
+cp /home/dev/poky/rpi-build/tmp/deploy/images/raspberrypi4-64/core-image-base-raspberrypi4-64.wic.bz2 /home/dev/share/deploy/core-image-base-raspberrypi4-64-hello.wic.bz2
 
 # Tool chain build
 cd /home/dev/poky/rpi-build
