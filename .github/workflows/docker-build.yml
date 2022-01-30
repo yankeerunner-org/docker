@@ -7,5 +7,5 @@ jobs:
     steps:
       - shell: bash
         run: |
-          cd yocto
+          cd ./yocto
           docker build -t yocto:dunfell .
