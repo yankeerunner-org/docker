@@ -1,0 +1,24 @@
+name: Docker Build
+on: [push, workflow_dispatch]
+jobs:
+  job:
+    name: yocto build
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v2
+      - shell: bash
+      - name: build docker image
+        run: |
+          pushd ./yocto
+          docker build -t yocto:dunfell .
+          popd
+      - name: build base image
+        run: |
+          pushd ./yocto
+          ./run.sh
+          popd
+      - name: build meta-hello image
+        run: |
+          pushd ./meta-hello
+          ./run.sh
+          popd
