@@ -9,4 +9,4 @@ jobs:
       - shell: bash
         run: |
           cd ./yocto
-          docker build -t yocto:dunfell .
+          docker build --no-cache -t yocto:dunfell .
