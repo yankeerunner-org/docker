@@ -5,18 +5,20 @@ jobs:
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v2
-      - shell: bash
       - name: build docker image
+        shell: bash
         run: |
           pushd ./yocto
           docker build -t yocto:dunfell .
           popd
       - name: build base image
+        shell: bash
         run: |
           pushd ./yocto
           ./run.sh
           popd
       - name: build meta-hello image
+        shell: bash
         run: |
           pushd ./meta-hello
           ./run.sh
