@@ -1,1 +1,1 @@
-docker run -it -v "$(pwd):/home/dev/host" -e TZ=Asia/Tokyo yocto:dunfell /bin/bash
+docker run -it -v "$(pwd):/home/dev/host" -e TZ=Asia/Tokyo yocto:dunfell /bin/bash /home/dev/host/build.sh
