@@ -14,8 +14,8 @@ jobs:
       - name: build base image
         shell: bash
         run: |
-          docker run -v "$(pwd)/yocto:/home/dev/host" -v "$(pwd)/yocto/share:/home/dev/share" -e TZ=Asia/Tokyo yocto:dunfell /bin/bash /home/dev/host/build.sh
+          ./yocto/build-image.sh
       - name: build meta-hello image
         shell: bash
         run: |
-          docker run -v "$(pwd)/yocto:/home/dev/host" -v "$(pwd)/yocto/share:/home/dev/share" -e TZ=Asia/Tokyo yocto:dunfell /bin/bash /home/dev/host/build.sh
+          ./meta-hello/build-image.sh
