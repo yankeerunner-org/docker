@@ -4,9 +4,9 @@ jobs:
   Full-Build:
     runs-on: self-hosted
     steps:
+      - name: build docker image
       - uses: actions/checkout@v2
       - shell: bash
-      - name: build docker image
         run: |
           pushd ./yocto
           docker build -t yocto:dunfell .
