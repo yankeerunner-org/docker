@@ -27,6 +27,10 @@ IMX_DEFAULT_DISTRO_FEATURES_append = " systemd"
 
 # for c++
 TOOLCHAIN_TARGET_TASK_append = " libstdc++-staticdev"
+
+# for cache
+DL_DIR ?= "/home/dev/share/downloads"
+SSTATE_DIR ?= "/home/dev/share/sstate-cache"
 EOF
 
 # OS image build
