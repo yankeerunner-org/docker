@@ -1,7 +1,7 @@
 cd /home/dev/poky
 source oe-init-build-env rpi-build
 cd /home/dev/poky
-bitbake-layers craete-layer meta-hello
+bitbake-layers create-layer meta-hello
 cd /home/dev/poky/rpi-build
 bitbake-layers add-layer ../meta-hello/
 mkdir -p /home/dev/poky/meta-hello/recipes-hello/hello/files/

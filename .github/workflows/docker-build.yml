@@ -1,0 +1,11 @@
+name: Docker Build
+on: [push]
+jobs:
+  job:
+    name: yocto docker build
+    runs-on: self-hosted
+    steps:
+      - shell: bash
+        run: |
+          cd yocto
+          docker build -t yocto:dunfell .
