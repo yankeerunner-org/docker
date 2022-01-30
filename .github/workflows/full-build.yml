@@ -15,11 +15,11 @@ jobs:
         shell: bash
         run: |
           pushd ./yocto
-          ./run.sh
+          docker run -v "$(pwd):/home/dev/host" -e TZ=Asia/Tokyo yocto:dunfell /bin/bash /home/dev/host/build.sh
           popd
       - name: build meta-hello image
         shell: bash
         run: |
           pushd ./meta-hello
-          ./run.sh
+          docker run -v "$(pwd):/home/dev/host" -e TZ=Asia/Tokyo yocto:dunfell /bin/bash /home/dev/host/build.sh
           popd
