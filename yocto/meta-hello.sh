@@ -7,6 +7,8 @@ bitbake-layers add-layer ../meta-hello/
 mkdir -p /home/dev/poky/meta-hello/recipes-hello/hello/files/
 cp /home/dev/host/meta-hello/hello.c /home/dev/poky/meta-hello/recipes-hello/hello/files/
 cp /home/dev/host/meta-hello/hello_1.0.bb /home/dev/poky/meta-hello/recipes-hello/hello/
+
+# create yocto config
 cat >> /home/dev/poky/rpi-build/conf/local.conf << "EOF"
 # image
 IMAGE_INSTALL_append = " hello connman connman-client openssh-sftp-server sudo python3 python3-pip rpi-gpio raspi-gpio libstdc++"
