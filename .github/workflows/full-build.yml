@@ -6,7 +6,6 @@ jobs:
     steps:
       - name: build docker image
       - uses: actions/checkout@v2
-      - shell: bash
         run: |
           pushd ./yocto
           docker build -t yocto:dunfell .
