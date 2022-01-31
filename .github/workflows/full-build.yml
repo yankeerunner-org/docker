@@ -19,7 +19,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: core-image-base
-          path: /home/dev/share/deploy/core-image-base-raspberrypi4-64.wic.bz2
+          path: "${HOME}/develop/yocto/share/deploy/image/*.wic.bz2"
       - name: build hello image
         shell: bash
         run: |
@@ -28,4 +28,9 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: core-image-base-hello
-          path: /home/dev/share/deploy/core-image-base-raspberrypi4-64-hello.wic.bz2
+          path: "${HOME}/develop/yocto/share/deploy/image/*.hello.wic.bz2"
+      - name: upload hello sdk
+        uses: actions/upload-artifact@v2
+        with:
+          name: core-image-base-hello
+          path: "${HOME}/develop/yocto/share/deploy/sdk/"
