@@ -36,11 +36,15 @@ EOF
 # OS image build
 cd /home/dev/poky/rpi-build
 bitbake core-image-base
+mkdir -p /home/dev/host/deploy/image
+cp /home/dev/poky/rpi-build/tmp/deploy/images/raspberrypi4-64/core-image-base-raspberrypi4-64.wic.bz2 /home/dev/host/deploy/image/core-image-base-raspberrypi4-64-hello.wic.bz2
 mkdir -p /home/dev/share/deploy/image
 cp /home/dev/poky/rpi-build/tmp/deploy/images/raspberrypi4-64/core-image-base-raspberrypi4-64.wic.bz2 /home/dev/share/deploy/image/core-image-base-raspberrypi4-64-hello.wic.bz2
 
 # Tool chain build
 cd /home/dev/poky/rpi-build
 bitbake core-image-base -c populate_sdk
+mkdir -p /home/dev/host/deploy/sdk
+cp -R /home/dev/poky/rpi-build/tmp/deploy/sdk/* /home/dev/host/deploy/sdk
 mkdir -p /home/dev/share/deploy/sdk
 cp -R /home/dev/poky/rpi-build/tmp/deploy/sdk/* /home/dev/share/deploy/sdk

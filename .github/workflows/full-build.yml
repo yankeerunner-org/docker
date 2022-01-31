@@ -19,7 +19,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: core-image-base
-          path: "${HOME}/develop/yocto/share/deploy/image/*.wic.bz2"
+          path: "./yocto/deploy/image/*.wic.bz2"
       - name: build hello image
         shell: bash
         run: |
@@ -28,9 +28,9 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: core-image-base-hello
-          path: "${HOME}/develop/yocto/share/deploy/image/*.hello.wic.bz2"
+          path: "./meta-hello/deploy/image/*.hello.wic.bz2"
       - name: upload hello sdk
         uses: actions/upload-artifact@v2
         with:
           name: core-image-base-hello
-          path: "${HOME}/develop/yocto/share/deploy/sdk/"
+          path: "./meta-hello/deploy/sdk/"
