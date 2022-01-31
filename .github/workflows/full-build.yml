@@ -24,8 +24,8 @@ jobs:
         shell: bash
         run: |
           ./meta-hello/build-image.sh
-        uses: actions/upload-artifact@v2
       - name: upload hello image
+        uses: actions/upload-artifact@v2
         with:
           name: core-image-base-hello
           path: /home/dev/poky/rpi-build/tmp/deploy/images/raspberrypi4-64/*.wic.bz2
