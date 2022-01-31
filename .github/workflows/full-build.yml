@@ -20,6 +20,7 @@ jobs:
         with:
           name: core-image-base
           path: /home/dev/share/deploy/core-image-base-raspberrypi4-64.wic.bz2
+      - name: build hello image
         shell: bash
         run: |
           ./meta-hello/build-image.sh
