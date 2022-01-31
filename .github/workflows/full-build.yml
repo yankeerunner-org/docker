@@ -19,8 +19,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: core-image-base
-          path: /home/dev/poky/rpi-build/tmp/deploy/images/raspberrypi4-64/*.wic.bz2
-      - name: build meta-hello image
+          path: /home/dev/share/deploy/core-image-base-raspberrypi4-64.wic.bz2
         shell: bash
         run: |
           ./meta-hello/build-image.sh
@@ -28,4 +27,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: core-image-base-hello
-          path: /home/dev/poky/rpi-build/tmp/deploy/images/raspberrypi4-64/*.wic.bz2
+          path: /home/dev/share/deploy/core-image-base-raspberrypi4-64-hello.wic.bz2
