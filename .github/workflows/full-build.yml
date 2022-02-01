@@ -28,9 +28,9 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: core-image-base-hello
-          path: "./meta-hello/deploy/image/*.hello.wic.bz2"
+          path: "./meta-hello/deploy/image/*hello.wic.bz2"
       - name: upload hello sdk
         uses: actions/upload-artifact@v2
         with:
-          name: core-image-base-hello
+          name: core-image-base-hello-sdk
           path: "./meta-hello/deploy/sdk/"
