@@ -29,17 +29,17 @@ IMX_DEFAULT_DISTRO_FEATURES_append = " systemd"
 TOOLCHAIN_TARGET_TASK_append = " libstdc++-staticdev"
 
 # for cache
-DL_DIR ?= "/home/dev/host/downloads"
-SSTATE_DIR ?= "/home/dev/host/sstate-cache"
+DL_DIR ?= "/home/dev/share/hello/downloads"
+SSTATE_DIR ?= "/home/dev/share/hello/sstate-cache"
 EOF
 
 # OS image build
 cd /home/dev/poky/rpi-build
 bitbake core-image-base
 mkdir -p /home/dev/host/deploy/image
-cp -R /home/dev/poky/rpi-build/tmp/deploy/images /home/dev/host
+cp -R /home/dev/poky/rpi-build/tmp/deploy/images /home/dev/share/hello
 
 # Tool chain build
 cd /home/dev/poky/rpi-build
 bitbake core-image-base -c populate_sdk
-cp -R /home/dev/poky/rpi-build/tmp/deploy/sdk /home/dev/host
+cp -R /home/dev/poky/rpi-build/tmp/deploy/sdk /home/dev/share/hello
