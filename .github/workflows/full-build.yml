@@ -2,7 +2,7 @@ name: Full Build
 on: [push, workflow_dispatch]
 jobs:
   Full-Build:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: build docker image
