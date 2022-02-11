@@ -29,32 +29,17 @@ IMX_DEFAULT_DISTRO_FEATURES_append = " systemd"
 TOOLCHAIN_TARGET_TASK_append = " libstdc++-staticdev"
 
 # for cache
-DL_DIR ?= "/home/dev/downloads"
-SSTATE_DIR ?= "/home/dev/sstate-cache"
+DL_DIR ?= "/home/dev/host/downloads"
+SSTATE_DIR ?= "/home/dev/host/sstate-cache"
 EOF
 
 # OS image build
-# cd /home/dev/poky/rpi-build
-# bitbake core-image-base
-# mkdir -p /home/dev/host/deploy/image
-# cp -R /home/dev/poky/rpi-build/tmp/deploy/images /home/dev/host
+cd /home/dev/poky/rpi-build
+bitbake core-image-base
+mkdir -p /home/dev/host/deploy/image
+cp -R /home/dev/poky/rpi-build/tmp/deploy/images /home/dev/host
 
 # Tool chain build
-# cd /home/dev/poky/rpi-build
-# bitbake core-image-base -c populate_sdk
-# cp -R /home/dev/poky/rpi-build/tmp/deploy/sdk /home/dev/host
-
-# XXX
-mkdir -p /home/dev/downloads
-mkdir -p /home/dev/sstate-cache
-mkdir -p /home/dev/image
-mkdir -p /home/dev/sdk
-touch /home/dev/downloads/sample-file
-touch /home/dev/sstate-cache/sample-file
-touch /home/dev/image/sample-file
-touch /home/dev/sdk/sample-file
-cp -R /home/dev/downloads /home/dev/host
-cp -R /home/dev/sstate-cache /home/dev/host
-cp -R /home/dev/image /home/dev/host
-cp -R /home/dev/sdk /home/dev/host
-# XXX
+cd /home/dev/poky/rpi-build
+bitbake core-image-base -c populate_sdk
+cp -R /home/dev/poky/rpi-build/tmp/deploy/sdk /home/dev/host

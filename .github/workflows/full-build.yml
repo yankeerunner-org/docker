@@ -2,7 +2,7 @@ name: Full Build
 on: [push, workflow_dispatch]
 jobs:
   Full-Build:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - uses: actions/checkout@v2
       - name: Log in to the Container registry
@@ -15,16 +15,6 @@ jobs:
         shell: bash
         run: |
           ./yocto/build-image.sh
-      - name: upload base image downloads
-        uses: actions/upload-artifact@v2
-        with:
-          name: core-image-base-downloads
-          path: ./yocto/downloads
-      - name: upload base image sstate-cache
-        uses: actions/upload-artifact@v2
-        with:
-          name: core-image-base-sstate-cache
-          path: ./yocto/sstate-cache
       - name: upload base image
         uses: actions/upload-artifact@v2
         with:
@@ -34,16 +24,6 @@ jobs:
         shell: bash
         run: |
           ./meta-hello/build-image.sh
-      - name: upload hello image downloads
-        uses: actions/upload-artifact@v2
-        with:
-          name: core-image-base-downloads
-          path: ./meta-hello/downloads
-      - name: upload hello image sstate-cache
-        uses: actions/upload-artifact@v2
-        with:
-          name: core-image-base-sstate-cache
-          path: ./meta-hello/sstate-cache
       - name: upload hello image
         uses: actions/upload-artifact@v2
         with:
