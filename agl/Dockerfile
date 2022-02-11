@@ -1,4 +1,4 @@
-FROM yocto:dunfell
+FROM ghcr.io/yankeerunner-org/yocto:dunfell
 
 # package for build
 RUN sudo apt-get update && sudo apt-get install -y curl python
