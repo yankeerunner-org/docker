@@ -42,5 +42,4 @@ cp /home/dev/poky/rpi-build/tmp/deploy/images/raspberrypi4-64/core-image-base-ra
 # Tool chain build
 cd /home/dev/poky/rpi-build
 bitbake core-image-base -c populate_sdk
-mkdir -p /home/dev/host/deploy/sdk
-cp -R /home/dev/poky/rpi-build/tmp/deploy/sdk/* /home/dev/host/deploy/sdk
+cp -R /home/dev/poky/rpi-build/tmp/deploy/sdk /home/dev
