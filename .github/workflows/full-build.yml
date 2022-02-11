@@ -10,6 +10,7 @@ jobs:
         run: |
           pushd ./yocto
           docker build -t yocto:dunfell .
+          docker push ghcr.io/yankeerunner_org/yocto:dunfell
           popd
       - name: build base image
         shell: bash
