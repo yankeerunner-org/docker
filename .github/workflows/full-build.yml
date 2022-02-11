@@ -15,22 +15,42 @@ jobs:
         shell: bash
         run: |
           ./yocto/build-image.sh
+      - name: upload base image downloads
+        uses: actions/upload-artifact@v2
+        with:
+          name: core-image-base-downloads
+          path: ./yocto/downloads
+      - name: upload base image sstate-cache
+        uses: actions/upload-artifact@v2
+        with:
+          name: core-image-base-sstate-cache
+          path: ./yocto/sstate-cache
       - name: upload base image
         uses: actions/upload-artifact@v2
         with:
           name: core-image-base
-          path: "./yocto/deploy/image/*.wic.bz2"
+          path: ./yocto/image
       - name: build hello image
         shell: bash
         run: |
           ./meta-hello/build-image.sh
+      - name: upload hello image downloads
+        uses: actions/upload-artifact@v2
+        with:
+          name: core-image-base-downloads
+          path: ./meta-hello/downloads
+      - name: upload hello image sstate-cache
+        uses: actions/upload-artifact@v2
+        with:
+          name: core-image-base-sstate-cache
+          path: ./meta-hello/sstate-cache
       - name: upload hello image
         uses: actions/upload-artifact@v2
         with:
           name: core-image-base-hello
-          path: "./meta-hello/deploy/image/*hello.wic.bz2"
+          path: ./meta-hello/image
       - name: upload hello sdk
         uses: actions/upload-artifact@v2
         with:
           name: core-image-base-hello-sdk
-          path: "./meta-hello/deploy/sdk/"
+          path: ./meta-hello/sdk

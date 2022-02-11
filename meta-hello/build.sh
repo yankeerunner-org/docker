@@ -34,12 +34,27 @@ SSTATE_DIR ?= "/home/dev/sstate-cache"
 EOF
 
 # OS image build
-cd /home/dev/poky/rpi-build
-bitbake core-image-base
-mkdir -p /home/dev/host/deploy/image
-cp /home/dev/poky/rpi-build/tmp/deploy/images/raspberrypi4-64/core-image-base-raspberrypi4-64.wic.bz2 /home/dev/host/deploy/image/core-image-base-raspberrypi4-64-hello.wic.bz2
+# cd /home/dev/poky/rpi-build
+# bitbake core-image-base
+# mkdir -p /home/dev/host/deploy/image
+# cp -R /home/dev/poky/rpi-build/tmp/deploy/images /home/dev/host
 
 # Tool chain build
-cd /home/dev/poky/rpi-build
-bitbake core-image-base -c populate_sdk
-cp -R /home/dev/poky/rpi-build/tmp/deploy/sdk /home/dev
+# cd /home/dev/poky/rpi-build
+# bitbake core-image-base -c populate_sdk
+# cp -R /home/dev/poky/rpi-build/tmp/deploy/sdk /home/dev/host
+
+# XXX
+mkdir -p /home/dev/downloads
+mkdir -p /home/dev/sstate-cache
+mkdir -p /home/dev/image
+mkdir -p /home/dev/sdk
+touch /home/dev/downloads/sample-file
+touch /home/dev/sstate-cache/sample-file
+touch /home/dev/image/sample-file
+touch /home/dev/sdk/sample-file
+cp -R /home/dev/downloads /home/dev/host
+cp -R /home/dev/sstate-cache /home/dev/host
+cp -R /home/dev/image /home/dev/host
+cp -R /home/dev/sdk /home/dev/host
+# XXX
