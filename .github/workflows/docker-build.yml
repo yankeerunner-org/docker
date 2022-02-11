@@ -1,0 +1,21 @@
+name: Docker Build
+on: [workflow_dispatch]
+jobs:
+  Docker-Build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Log in to the Container registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: ./yocto
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository_owner }}/yocto:latest
+            ghcr.io/${{ github.repository_owner }}/yocto:dunfell
