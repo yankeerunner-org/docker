@@ -9,16 +9,16 @@ jobs:
         uses: docker/login-action@v1
         with:
           registry: ghcr.io
-          username: ${{ github.actor }}
+          username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      - name: build docker image
-        shell: bash
-        run: |
-          pushd ./yocto
-          docker build -t yocto:dunfell .
-          docker tag $(docker images -q | head -n 1) ghcr.io/yankeerunner_org/yocto:dunfell
-          docker push ghcr.io/yankeerunner_org/yocto:dunfell
-          popd
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: ./yocto
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository_owner }}/yocto:latest
+            ghcr.io/${{ github.repository_owner }}/yocto:dunfell
       - name: build base image
         shell: bash
         run: |
