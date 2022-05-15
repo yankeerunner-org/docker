@@ -1,4 +1,5 @@
 # setup build environment
+source $HOME/.bashrc
 cd $AGL_TOP/koi
 
 # build setup
