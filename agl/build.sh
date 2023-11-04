@@ -11,4 +11,3 @@ echo 'SSTATE_DIR ?= "/home/dev/share/agl/sstate-cache"' >> $AGL_TOP/raspberrypi4
 
 # build agl-demo-platform
 time bitbake agl-demo-platform
-cp -R $AGL_TOP/raspberrypi4/tmp/deploy/images/raspberrypi4-64 /home/dev/share/agl
