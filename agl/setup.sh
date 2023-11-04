@@ -13,8 +13,8 @@ chmod a+x $HOME/bin/repo
 # download the agl source files
 # stable release
 cd $AGL_TOP
-repo init -b marlin -m marlin_13.0.0.xml -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
-repo sync
+python3 $HOME/bin/repo init -b marlin -m marlin_13.0.0.xml -u https://gerrit.automotivelinux.org/gerrit/AGL/AGL-repo
+python3 $HOME/bin/repo sync
 
 # setup build environment
 cd $AGL_TOP
