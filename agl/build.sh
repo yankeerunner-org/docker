@@ -9,5 +9,5 @@ source meta-agl/scripts/aglsetup.sh -f -m raspberrypi4 -b raspberrypi4 agl-demo
 echo 'DL_DIR ?= "/home/dev/share/agl/downloads"' >> $AGL_TOP/raspberrypi4/conf/local.conf
 echo 'SSTATE_DIR ?= "/home/dev/share/agl/sstate-cache"' >> $AGL_TOP/raspberrypi4/conf/local.conf
 
-# build agl-demo-platform
-time bitbake agl-demo-platform
+# build
+time bitbake agl-ivi-demo-platform-flutter

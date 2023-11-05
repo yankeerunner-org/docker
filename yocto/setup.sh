@@ -1,7 +1,7 @@
-git clone git://git.yoctoproject.org/poky -b dunfell
+git clone git://git.yoctoproject.org/poky -b kirkstone
 cd /home/dev/poky
-git clone git://git.yoctoproject.org/meta-raspberrypi -b dunfell
-git clone git://git.openembedded.org/meta-openembedded -b dunfell
+git clone git://git.yoctoproject.org/meta-raspberrypi -b kirkstone
+git clone git://git.openembedded.org/meta-openembedded -b kirkstone
 source oe-init-build-env rpi-build
 bitbake-layers add-layer ../meta-raspberrypi/
 bitbake-layers add-layer ../meta-openembedded/meta-oe
