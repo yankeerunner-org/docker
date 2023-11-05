@@ -18,7 +18,6 @@ jobs:
           push: true
           tags: |
             ghcr.io/${{ github.repository_owner }}/yocto:latest
-            ghcr.io/${{ github.repository_owner }}/yocto:dunfell
   agl:
     runs-on: ubuntu-latest
     needs: yocto
