@@ -6,4 +6,4 @@ if [ "$(docker ps -a | grep ${CONTAINER_NAME})" ] ; then
 else
   echo "not found container. ignore it. name=${CONTAINER_NAME}"
 fi
-docker run --name ${CONTAINER_NAME} -it ghcr.io/yankeerunner-org/agl:dunfell /bin/bash -i -c "/home/dev/build.sh && /bin/bash"
+docker run --name ${CONTAINER_NAME} -it ghcr.io/yankeerunner-org/agl:latest /bin/bash -i -c "/home/dev/build.sh && /bin/bash"
