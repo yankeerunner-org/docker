@@ -35,6 +35,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: show parameter
-        run: echo "logLevel=${{ inputs.logLevel }}"
-        run: echo "ENV_SECRET_1=${{ secrets.ENV_SECRET_1 }}"
-        run: echo "ENV_VARIABLE_1=${{ vars.ENV_VARIABLE_1 }}"
+        run: |
+          echo "logLevel=${{ inputs.logLevel }}"
+          echo "ENV_SECRET_1=${{ secrets.ENV_SECRET_1 }}"
+          echo "ENV_VARIABLE_1=${{ vars.ENV_VARIABLE_1 }}"
